@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEW 2.4 Dapp</title>
+</head>
+
+<body>
+  <h1>Super Smash Bros. Fighters</h1>
+  <p>You have <strong id="numFighters">loading...</strong> fighters</p>
+
+  <h1>Transfer Fighter</h1>
+
+  <label for="fighterId">Fighter ID:</label>
+  <input type="text" id="fighterId" placeholder="e.g. 10" />
+
+  <label for="recipient">To address:</label>
+  <input type="text" id="recipient" placeholder="e.g. 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae" />
+
+  <button onclick="App.transferFrom()">Send Fighter</button>
+
+  <p id="status"></p>
+  <p>
+    <strong>Hint:</strong> open the browser developer console to view any
+    errors and warnings.
+  </p>
+  <script src="script.js"></script>
+</body>
+
+</html>
