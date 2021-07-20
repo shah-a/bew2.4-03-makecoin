@@ -23,10 +23,16 @@ const App = {
       this.account = accounts[0];
 
       this.refreshFighters();
+      // this.test(); // Uncomment and use test() below for debugging on page load
     } catch (error) {
       console.error("Could not connect to contract or chain.");
     }
   },
+
+  // Uncomment and use this.test() above for debugging on page load
+  // test: async function () {
+  //   console.log(this.account)
+  // },
 
   transferFrom: async function () {
     const fighterId = parseInt(document.getElementById("fighterId").value);
@@ -35,7 +41,8 @@ const App = {
     this.setStatus("Sending fighter... (this may take a while)");
 
     const { transferFrom } = this.meta.methods;
-    await transferFrom(this.account, recipient, fighterId).call();
+    let result = await transferFrom(this.account, recipient, fighterId).send({ from: this.account });
+    console.log(result);
 
     this.setStatus("Transfer complete!");
     this.refreshFighters();
